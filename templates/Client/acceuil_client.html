@@ -1,0 +1,39 @@
+ {% extends 'main.html' %}
+
+{% block contenu  %}
+<table border="collapse">
+    <tr>
+        <th>Id</th><pre>
+        <th>nomclient</th><pre>
+        <th>contact</th><pre>
+    </tr>
+    {%for client in clients%}
+    <tr>
+    <th>{{client.id}}</th>
+    <th>{{client.nomclient}}</th>
+    <th>{{client.contact}}</th>
+</tr>
+    {% endfor %}
+</table>
+<table border="collapse">
+    <tr>
+        <th>Id</th>
+        </pre><th>Client</th>
+        <th>Produit</th>
+        <th>Date de creation</th>
+        <th>Status</th>
+
+    </tr>
+    {%for commande in commandes%}
+    <tr>
+        <th>{{commande.id}}</th>
+        <th>{{commande.client}}</th>
+        <th>{{commande.produit}}</th>
+        <th>{{commande.date_creation}}</th>
+        <th>{{commande.status}}</th>
+    </tr>
+        {% endfor %}
+</table>
+
+
+    {% endblock  %}
