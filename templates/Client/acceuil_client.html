@@ -1,20 +1,25 @@
  {% extends 'main.html' %}
 
 {% block contenu  %}
+<div>
 <table border="collapse">
     <tr>
         <th>Id</th><pre>
         <th>nomclient</th><pre>
         <th>contact</th><pre>
+        <th>Details</th><pre>
     </tr>
     {%for client in clients%}
     <tr>
     <th>{{client.id}}</th>
     <th>{{client.nomclient}}</th>
     <th>{{client.contact}}</th>
+    <th><input class='btn btn-sm btn-success' type="submit" name="" value="Detais"></th>
+    
 </tr>
     {% endfor %}
 </table>
+<br>
 <table border="collapse">
     <tr>
         <th>Id</th>
@@ -31,9 +36,14 @@
         <th>{{commande.produit}}</th>
         <th>{{commande.date_creation}}</th>
         <th>{{commande.status}}</th>
+        <!--<th><a class='btn btn-sm btn-success'  href="{% url 'ajout_commande' %}">ajouter</a></th>
+         <th><a class='btn btn-sm btn-info'  href="{% url 'ajout_commande' %}">Modifier</a></th>
+       <th><a class='btn btn-sm btn-danger'  href="{% url 'supprimer_commande' %}">Supprimer</a></th>-->
+        
     </tr>
         {% endfor %}
 </table>
+</div>
 
 
     {% endblock  %}

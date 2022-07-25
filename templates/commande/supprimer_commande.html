@@ -1,0 +1,12 @@
+{% include 'main.html' %}
+{% block contenu  %}
+<form action="{% url 'supprimer_commande' item.id %}" method="POST">
+    {% csrf_token %}
+    
+    <a class="btn btn-warning" href="{%url 'commande' %}">Annuler</a>
+    <input class="btn btn-danger" type="submit" name="supprimer">
+
+</form>
+{% endblock  %}
+   <hr>
+   <h1>Footer</h1>
